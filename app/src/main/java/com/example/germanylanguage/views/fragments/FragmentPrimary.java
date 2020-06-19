@@ -20,7 +20,6 @@ public class FragmentPrimary extends Fragment {
 
 
     public interface GetMessageFromObservable {//___________________________________________________ GetMessageFromObservable
-
         void GetMessageFromObservable(Byte action);
     }//_____________________________________________________________________________________________ GetMessageFromObservable
 
