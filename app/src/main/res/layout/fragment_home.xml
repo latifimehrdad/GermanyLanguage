@@ -20,19 +20,60 @@
             >
 
             <LinearLayout
+                android:id="@+id/LinearLayoutSample"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="@drawable/dw_home_circle_top">
+                android:gravity="bottom|center_horizontal"
+                android:background="@drawable/dw_home_circle_top"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/ic_youtube_searched_for"
+                    android:tint="@color/ML_White"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ML_White"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:text="@string/ML_Sample"
+                    fontPath="fonts/iransans_web_medium.ttf"
+                    />
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/LinearLayoutChallenge"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_marginTop="@dimen/_3sdp"
                 android:background="@drawable/dw_home_circle_bottom"
-                android:layout_weight="1">
+                android:gravity="top|center_horizontal"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/ic_pool_black"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:tint="@color/ML_White"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/ML_White"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_1sdp"
+                    android:text="@string/ML_Challenge"
+                    fontPath="fonts/iransans_web_medium.ttf"
+                    />
+
 
             </LinearLayout>
 

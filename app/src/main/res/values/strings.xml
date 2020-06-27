@@ -1,3 +1,10 @@
 <resources>
+
     <string name="app_name">GermanyLanguage</string>
+
+    <string name="ML_Sample">مرور جملات</string>
+    <string name="ML_Challenge">شروع چالش</string>
+
+
+
 </resources>

@@ -12,20 +12,20 @@ import androidx.navigation.Navigation;
 
 import com.example.germanylanguage.R;
 import com.example.germanylanguage.databinding.FragmentHomeBinding;
+import com.example.germanylanguage.databinding.FragmentSampleBinding;
 import com.example.germanylanguage.viewmodels.fragments.VM_Home;
+import com.example.germanylanguage.viewmodels.fragments.VM_Sample;
 
 import butterknife.ButterKnife;
 
-public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageFromObservable {
+public class Sample extends FragmentPrimary implements FragmentPrimary.GetMessageFromObservable {
 
-    private VM_Home vm_home;
     private NavController navController;
-
-    public Home() {//_______________________________________________________________________________ Home
-
-    }//_____________________________________________________________________________________________ Home
+    private VM_Sample vm_sample;
 
 
+    public Sample() {//_____________________________________________________________________________ Sample
+    }//_____________________________________________________________________________________________ Sample
 
     @Nullable
     @Override
@@ -34,10 +34,10 @@ public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageF
             ViewGroup container,
             Bundle savedInstanceState) {//__________________________________________________________ onCreateView
         if (getView() == null) {
-            FragmentHomeBinding binding = DataBindingUtil.inflate(
-                    inflater, R.layout.fragment_home, container, false);
-            vm_home = new VM_Home(getContext());
-            binding.setHome(vm_home);
+            FragmentSampleBinding binding = DataBindingUtil.inflate(
+                    inflater, R.layout.fragment_sample, container, false);
+            vm_sample = new VM_Sample(getContext());
+            binding.setSample(vm_sample);
             setView(binding.getRoot());
             ButterKnife.bind(this, getView());
         }
@@ -49,7 +49,7 @@ public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageF
     @Override
     public void onStart() {//_______________________________________________________________________ onStart
         super.onStart();
-        setGetMessageFromObservable(Home.this, vm_home.getPublishSubject());
+        setGetMessageFromObservable(Sample.this, vm_sample.getPublishSubject());
         navController = Navigation.findNavController(getView());
     }//_____________________________________________________________________________________________ onStart
 

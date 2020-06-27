@@ -11,21 +11,21 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 
 import com.example.germanylanguage.R;
-import com.example.germanylanguage.databinding.FragmentHomeBinding;
-import com.example.germanylanguage.viewmodels.fragments.VM_Home;
+import com.example.germanylanguage.databinding.FragmentChallengeBinding;
+import com.example.germanylanguage.databinding.FragmentSampleBinding;
+import com.example.germanylanguage.viewmodels.fragments.VM_Challenge;
+import com.example.germanylanguage.viewmodels.fragments.VM_Sample;
 
 import butterknife.ButterKnife;
 
-public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageFromObservable {
+public class Challenge extends FragmentPrimary implements FragmentPrimary.GetMessageFromObservable {
 
-    private VM_Home vm_home;
     private NavController navController;
-
-    public Home() {//_______________________________________________________________________________ Home
-
-    }//_____________________________________________________________________________________________ Home
+    private VM_Challenge vm_challenge;
 
 
+    public Challenge() {//__________________________________________________________________________ Challenge
+    }//_____________________________________________________________________________________________ Challenge
 
     @Nullable
     @Override
@@ -34,10 +34,10 @@ public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageF
             ViewGroup container,
             Bundle savedInstanceState) {//__________________________________________________________ onCreateView
         if (getView() == null) {
-            FragmentHomeBinding binding = DataBindingUtil.inflate(
-                    inflater, R.layout.fragment_home, container, false);
-            vm_home = new VM_Home(getContext());
-            binding.setHome(vm_home);
+            FragmentChallengeBinding binding = DataBindingUtil.inflate(
+                    inflater, R.layout.fragment_challenge, container, false);
+            vm_challenge = new VM_Challenge(getContext());
+            binding.setChallenge(vm_challenge);
             setView(binding.getRoot());
             ButterKnife.bind(this, getView());
         }
@@ -49,7 +49,7 @@ public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageF
     @Override
     public void onStart() {//_______________________________________________________________________ onStart
         super.onStart();
-        setGetMessageFromObservable(Home.this, vm_home.getPublishSubject());
+        setGetMessageFromObservable(Challenge.this, vm_challenge.getPublishSubject());
         navController = Navigation.findNavController(getView());
     }//_____________________________________________________________________________________________ onStart
 
