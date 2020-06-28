@@ -75,7 +75,7 @@ public class Splash extends FragmentPrimary implements FragmentPrimary.GetMessag
     public void GetMessageFromObservable(Byte action) {//___________________________________________ GetMessageFromObservable
 
         if (action == StaticValues.ML_GotoHome) {
-            navController.navigate(R.id.action_splash_to_home2);
+            navController.navigate(R.id.action_splash_to_home);
         }
     }//_____________________________________________________________________________________________ GetMessageFromObservable
 }

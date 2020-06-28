@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -14,12 +15,20 @@ import com.example.germanylanguage.R;
 import com.example.germanylanguage.databinding.FragmentHomeBinding;
 import com.example.germanylanguage.viewmodels.fragments.VM_Home;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageFromObservable {
 
     private VM_Home vm_home;
     private NavController navController;
+
+    @BindView(R.id.LinearLayoutSample)
+    LinearLayout LinearLayoutSample;
+
+    @BindView(R.id.LinearLayoutChallenge)
+    LinearLayout LinearLayoutChallenge;
+
 
     public Home() {//_______________________________________________________________________________ Home
 
@@ -40,6 +49,7 @@ public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageF
             binding.setHome(vm_home);
             setView(binding.getRoot());
             ButterKnife.bind(this, getView());
+            SetOnClick();
         }
         return getView();
     }//_____________________________________________________________________________________________ onCreateView
@@ -59,5 +69,25 @@ public class Home extends FragmentPrimary implements FragmentPrimary.GetMessageF
     public void GetMessageFromObservable(Byte action) {//___________________________________________ GetMessageFromObservable
 
     }//_____________________________________________________________________________________________ GetMessageFromObservable
+
+
+
+    private void SetOnClick() {//___________________________________________________________________ SetOnClick
+
+        LinearLayoutSample.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_home_to_sample);
+            }
+        });
+
+        LinearLayoutChallenge.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navController.navigate(R.id.action_home_to_challenge);
+            }
+        });
+
+    }//_____________________________________________________________________________________________ SetOnClick
 
 }
